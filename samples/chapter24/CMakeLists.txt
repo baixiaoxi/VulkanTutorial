@@ -1,0 +1,18 @@
+add_executable(chapter24 src/24_sampler.cpp)
+target_include_directories(chapter24 PRIVATE ${GLM_INCLUDE_DIRS} ${STB_INCLUDE_DIRS})
+target_link_libraries(chapter24 glfw ${Vulkan_LIBRARY})
+
+set(RESOURCE_FILES
+    shaders/frag.spv
+    shaders/vert.spv
+    textures/texture.jpg
+)
+
+foreach(resource_file ${RESOURCE_FILES})
+    add_custom_command(
+        TARGET chapter24 POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/${resource_file}
+                $(OutDir)/${resource_file}
+    )
+endforeach(resource_file)
