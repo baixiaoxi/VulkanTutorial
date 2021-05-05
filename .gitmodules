@@ -1,0 +1,12 @@
+[submodule "samples/third_party/glfw"]
+	path = samples/third_party/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "samples/third_party/glm"]
+	path = samples/third_party/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "samples/third_party/tinyobjloader"]
+	path = samples/third_party/tinyobjloader
+	url = https://github.com/tinyobjloader/tinyobjloader.git
+[submodule "samples/third_party/stb"]
+	path = samples/third_party/stb
+	url = https://github.com/nothings/stb.git
