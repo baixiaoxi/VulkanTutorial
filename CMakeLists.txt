@@ -24,10 +24,12 @@ set(PROJECT_VERSION_PATCH 1)
 # Add module path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+# Add dependencies
+add_subdirectory(samples/third_party)
+
 # GLM
 set(GLM_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/samples/third_party/glm")
 find_package(GLM REQUIRED)
-#include_directories(${GLM_INCLUDE_DIRS})
 
 # vulkan
 find_package(Vulkan REQUIRED)
@@ -36,14 +38,10 @@ include_directories(${Vulkan_INCLUDE_DIRS})
 # stb
 set(STB_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/samples/third_party/stb")
 find_package(stb REQUIRED)
-#include_directories(${STB_INCLUDE_DIRS})
 
 # tinyobjloader
 set(TINY_OBJ_LOADER_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/samples/third_party/tinyobjloader")
 find_package(tinyobjloader REQUIRED)
-#include_directories(${TINY_OBJ_LOADER_INCLUDE_DIRS})
-
-add_subdirectory(samples/third_party)
 
 # glfw
 #option(GLFW_USE_STATIC_LIBS "GLFW_USE_STATIC_LIBS" ON)
